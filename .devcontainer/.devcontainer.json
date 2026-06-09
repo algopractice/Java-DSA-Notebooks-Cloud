@@ -1,0 +1,13 @@
+{
+  "name": "Java Notebook Cloud Workspace",
+  "image": "://microsoft.com",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "vscjava.vscode-java-pack"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install jbang && jbang exec \"trust add https://github.com/jupyter-java\" && jbang exec \"install-kernel@jupyter-java --java 21\""
+}
