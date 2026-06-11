@@ -6,8 +6,13 @@
       "extensions": [
         "ms-toolsai.jupyter",
         "vscjava.vscode-java-pack"
-      ]
+      ],
+      "settings": {
+        "terminal.integrated.env.linux": {
+          "PATH": "${env:PATH}:/home/codespace/.jbang/bin"
+        }
+      }
     }
   },
-  "postCreateCommand": "bash -c 'curl -Ls https://sh.jbang.dev | bash -s - app setup && export PATH=$PATH:~/.jbang/bin && jbang trust add https://github.com/jupyter-java && jbang install-kernel@jupyter-java'"
+  "postCreateCommand": "curl -Ls https://sh.jbang.dev | bash -s - app setup && /home/codespace/.jbang/bin/jbang trust add https://github.com/jupyter-java && /home/codespace/.jbang/bin/jbang install-kernel@jupyter-java"
 }
