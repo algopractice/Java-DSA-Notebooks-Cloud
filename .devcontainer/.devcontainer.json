@@ -1,6 +1,6 @@
 {
-  "name": "Java Notebook Cloud Workspace",
-  "image": "://microsoft.com",
+  "name": "Java DSA Notebooks",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -9,5 +9,5 @@
       ]
     }
   },
-  "postCreateCommand": "pip install jbang && jbang exec \"trust add https://github.com/jupyter-java\" && jbang exec \"install-kernel@jupyter-java --java 21\""
+  "postCreateCommand": "bash -c 'curl -Ls https://sh.jbang.dev | bash -s - app setup && export PATH=$PATH:~/.jbang/bin && jbang trust add https://github.com/jupyter-java && jbang install-kernel@jupyter-java'"
 }
